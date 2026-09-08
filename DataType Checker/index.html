@@ -1,14 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="script.js"></script>
+    <title>JavaScript Data Type Checker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="card">
+
+            <div class="icon">JS</div>
+
+            <h1>Data Type Checker</h1>
+
+            <p class="description">
+                Enter a value and JavaScript will determine its
+                value and data type.
+            </p>
+
+            <button class="check-btn" onclick="checkValue()">
+                Enter Value
+            </button>
+
+            <div class="result">
+
+                <div class="result-box">
+                    <span class="label">Value</span>
+                    <span id="valueOutput">---</span>
+                </div>
+
+                <div class="result-box">
+                    <span class="label">Data Type</span>
+                    <span id="typeOutput">---</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
