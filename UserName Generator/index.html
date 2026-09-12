@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Username Generator</h1>
+        <p>Create a unique username in seconds!</p>
+
+        <input type="text" id="firstName" placeholder="Enter first name">
+
+        <input type="text" id="lastName" placeholder="Enter last name">
+
+        <input type="number" id="number" placeholder="Enter favorite number">
+
+        <button onclick="generateUsername()">
+            Generate Username
+        </button>
+
+        <div class="result">
+            <p>Your username:</p>
+            <h2 id="username">---</h2>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
