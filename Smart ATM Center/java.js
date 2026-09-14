@@ -4,7 +4,7 @@
 
 let balance = 50000;
 
-const correctPIN = "1234";
+const correctPIN = "12345";
 
 
 // ===============================
@@ -81,10 +81,10 @@ pinSubmitBtn.addEventListener("click", function() {
     }
 
 
-    if (enteredPIN.length !== 4) {
+    if (enteredPIN.length !== 5) {
 
         pinMessage.textContent =
-            "PIN must contain 4 digits.";
+            "PIN must contain 5 digits.";
 
         return;
     }
