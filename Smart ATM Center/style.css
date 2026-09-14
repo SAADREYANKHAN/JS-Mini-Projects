@@ -1,0 +1,841 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1920&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* DARK ATM CENTER OVERLAY */
+
+.background-overlay {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(20, 35, 50, 0.25),
+            rgba(0, 0, 0, 0.88)
+        );
+
+    z-index: -1;
+}
+
+
+/* ATM CENTER */
+
+.atm-center {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* ATM MACHINE */
+
+.atm-machine {
+    width: 480px;
+    max-width: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #30343a,
+            #111418 45%,
+            #25292e
+        );
+
+    border-radius: 30px;
+
+    padding: 25px;
+
+    border: 3px solid #444;
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.1),
+        0 30px 80px rgba(0, 0, 0, 0.9),
+        inset 0 0 30px rgba(0, 0, 0, 0.7);
+
+    position: relative;
+}
+
+
+/* ATM TOP */
+
+.atm-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    padding: 5px 10px;
+}
+
+
+.atm-logo {
+    font-size: 20px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.logo-icon {
+    color: #55d6ff;
+
+    text-shadow:
+        0 0 10px #55d6ff,
+        0 0 20px #55d6ff;
+}
+
+
+/* SECURITY LIGHT */
+
+.security-light {
+    width: 12px;
+    height: 12px;
+
+    background: #37ff72;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #37ff72,
+        0 0 20px #37ff72;
+
+    animation: blink 1.5s infinite;
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+
+/* SCREEN FRAME */
+
+.atm-screen-container {
+    padding: 18px;
+
+    background: #050607;
+
+    border-radius: 18px;
+
+    box-shadow:
+        inset 0 0 20px black,
+        0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+
+/* SCREEN */
+
+.atm-screen {
+
+    min-height: 470px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #12384c,
+            #06151e 70%
+        );
+
+    border: 3px solid #1d667c;
+
+    border-radius: 12px;
+
+    padding: 30px 25px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        inset 0 0 40px rgba(0, 200, 255, 0.15),
+        0 0 25px rgba(0, 200, 255, 0.15);
+}
+
+
+/* SCREEN CONTENT */
+
+.screen-content {
+    width: 100%;
+
+    animation: screenAppear 0.3s ease;
+}
+
+
+@keyframes screenAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* TEXT */
+
+h1 {
+    font-size: 32px;
+
+    letter-spacing: 3px;
+
+    margin: 12px 0;
+}
+
+
+h2 {
+    font-size: 26px;
+
+    margin-bottom: 15px;
+}
+
+
+.screen-content p {
+    color: #b9d7e2;
+
+    margin-bottom: 20px;
+}
+
+
+.screen-info {
+    font-size: 14px;
+}
+
+
+/* BANK ICON */
+
+.bank-icon {
+    font-size: 55px;
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(0, 210, 255, 0.7)
+        );
+}
+
+
+/* CARD INSERT */
+
+.insert-card {
+
+    margin: 30px auto;
+
+    padding: 20px;
+
+    border: 1px dashed #43c7ee;
+
+    border-radius: 12px;
+
+    max-width: 280px;
+
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+.insert-card span {
+    font-size: 40px;
+}
+
+
+/* BUTTON */
+
+.atm-button,
+.cancel-button {
+
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    margin: 5px;
+}
+
+
+.atm-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #00a8d6,
+            #006c94
+        );
+
+    color: white;
+
+    box-shadow:
+        0 0 10px rgba(0, 180, 255, 0.25);
+}
+
+
+.atm-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(0, 200, 255, 0.7);
+}
+
+
+.cancel-button {
+
+    background: #5a2020;
+
+    color: white;
+}
+
+
+.cancel-button:hover {
+
+    background: #8b2525;
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+
+/* PIN INPUT */
+
+.pin-input {
+
+    width: 220px;
+
+    padding: 15px;
+
+    margin: 20px auto;
+
+    display: block;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    letter-spacing: 10px;
+
+    color: white;
+
+    background: #061017;
+
+    border: 2px solid #2986a1;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+
+.pin-input:focus {
+
+    border-color: #47d9ff;
+
+    box-shadow:
+        0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+
+/* BUTTON ROW */
+
+.button-row {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+
+/* MAIN MENU */
+
+.menu-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+.menu-button {
+
+    min-height: 100px;
+
+    border: 1px solid #247b94;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102b36,
+            #08161c
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 28px;
+
+    transition: 0.25s;
+}
+
+
+.menu-button span {
+
+    font-size: 14px;
+
+    color: #bde7f2;
+}
+
+
+.menu-button:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #43d7ff;
+
+    box-shadow:
+        0 0 20px rgba(0, 200, 255, 0.4);
+}
+
+
+/* BALANCE */
+
+.balance-display {
+
+    margin: 35px auto;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    border: 1px solid #247b94;
+}
+
+
+.balance-display span {
+
+    display: block;
+
+    color: #8eb7c5;
+
+    margin-bottom: 8px;
+}
+
+
+.balance-display strong {
+
+    font-size: 36px;
+
+    color: #63dbff;
+
+    text-shadow:
+        0 0 12px rgba(0, 200, 255, 0.7);
+}
+
+
+/* WITHDRAWAL */
+
+.amount-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+
+.amount-button {
+
+    padding: 13px;
+
+    background: #102a34;
+
+    color: white;
+
+    border: 1px solid #286e80;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.amount-button:hover {
+
+    background: #164655;
+
+    border-color: #52d9ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+
+/* CUSTOM AMOUNT */
+
+.custom-withdraw {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+
+.custom-withdraw input,
+#depositAmount {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    border-radius: 7px;
+
+    border: 1px solid #286e80;
+
+    background: #061117;
+
+    color: white;
+
+    outline: none;
+}
+
+
+.custom-withdraw button {
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0b87aa;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* MESSAGE */
+
+.message {
+
+    min-height: 22px;
+
+    margin: 12px 0 !important;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* SUCCESS */
+
+.success-icon {
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #146c3b;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 50px;
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 100, 0.4);
+}
+
+
+.transaction-info {
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.3);
+
+    border-radius: 12px;
+
+    margin: 20px 0;
+}
+
+
+.transaction-info p {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+
+/* GOODBYE */
+
+.goodbye-icon {
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ATM HARDWARE */
+
+.atm-hardware {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    margin: 25px 0;
+}
+
+
+.card-slot,
+.cash-slot {
+
+    width: 130px;
+
+    padding: 13px;
+
+    background: #090b0e;
+
+    border: 2px solid #34383d;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: #89939b;
+
+    box-shadow:
+        inset 0 0 12px black;
+}
+
+
+.card-slot span,
+.cash-slot span {
+
+    font-size: 20px;
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+
+/* KEYBOARD */
+
+.atm-keyboard {
+
+    width: 220px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+}
+
+
+.key {
+
+    height: 38px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            #33383d,
+            #181b1f
+        );
+
+    border-radius: 5px;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 3px 0 #08090a;
+}
+
+
+.cancel-key {
+
+    color: #ff7676;
+}
+
+
+.enter-key {
+
+    color: #65e6ff;
+}
+
+
+/* DEPOSIT */
+
+#depositAmount {
+
+    width: 100%;
+
+    margin: 20px 0;
+
+    font-size: 16px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .atm-center {
+        padding: 15px;
+    }
+
+    .atm-machine {
+        padding: 15px;
+
+        border-radius: 20px;
+    }
+
+    .atm-screen {
+        min-height: 500px;
+
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .menu-button {
+        min-height: 85px;
+    }
+
+    .atm-hardware {
+        gap: 10px;
+    }
+
+    .card-slot,
+    .cash-slot {
+        width: 110px;
+    }
+
+    .custom-withdraw {
+        flex-direction: column;
+    }
+
+}
